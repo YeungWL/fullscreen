@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>蓝盾云防线系统监控</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<!--可以在收藏夹中显示出图标-->
+<link rel="Bookmark" href="../favicon.ico" type="image/x-icon"/>
+<!--可以在地址栏中显示出图标-->
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="../style/style_xtjk.css" />
+<!-- jQuery  -->
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/layout_setting.js"></script>
+<script src="../js/lib/countUp/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="../js/lib/countUp/jquery.countup.js"></script>
+</head>
+<body >
+<!-- wrapper start -->
+<div class="chart_wrapper bg_chart" > 
+  <!-- chart_header start -->
+  <div class="chart_header">
+    <div class="logo float_l pl15">
+      <img src="../images/logo_xtjk.png" alt="logo" />
+    </div>   
+  </div>
+  <!-- chart_header end -->
+
+  <div class="chart_main clearfix">
+    <!-- 中间地图 -->
+    <div class="chart_modCenter main-scene">
+      <div id="xtjkChartmap" class="chart_map"></div>
+    </div>
+
+    <!-- chart_modLeft start -->
+    <div class="chart_modLeft">
+      <a class="icon icon_arrow icon_arrow_left"></a>
+      <div class="scene-content">
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>攻击来源地排行</h3>
+          <div class="chart_box">
+            <div id="gjlydChartBar" class="chart"></div>
+          </div>
+        </div>
+
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>攻击来源IP排行</h3>
+          <div class="chart_box">
+            <div id="gjlyipChartBar" class="chart"></div>
+          </div>
+        </div>
+
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>入侵类别</h3>
+          <div id="rqlbList" class="chart_box">
+            <ul class="rqlb_list clearfix">
+<!--               <li class="list_item " ><span class="fr counter">2800</span><span class="fl">SQL注入</span></li>
+              <li class="list_item " ><span class="fr counter">3300</span><span class="fl">跨站脚本</span></li>
+              <li class="list_item " ><span class="fr counter">8700</span><span class="fl">木马病毒</span></li>
+              <li class="list_item " ><span class="fr counter">13500</span><span class="fl">DDOS攻击</span></li>
+              <li class="list_item " ><span class="fr counter">1800</span><span class="fl">CC攻击</span></li>
+              <li class="list_item " ><span class="fr counter">2800</span><span class="fl">SQL注入</span></li>
+              <li class="list_item " ><span class="fr counter">3300</span><span class="fl">跨站脚本</span></li>
+              <li class="list_item " ><span class="fr counter">8700</span><span class="fl">木马病毒</span></li>
+              <li class="list_item " ><span class="fr counter">13500</span><span class="fl">DDOS攻击</span></li>
+              <li class="list_item " ><span class="fr counter">1800</span><span class="fl">CC攻击</span></li>    -->           
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- chart_modLeft end -->
+
+    <!-- chart_modRight start -->
+    <div class="chart_modRight">
+      <a class="icon icon_arrow icon_arrow_right"></a>
+      <div class="scene-content">
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>网站流量 Top5</h3>
+          <div class="chart_box">
+            <div id="wzllChartLine" class="chart"></div>
+          </div>
+        </div>
+
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>节点性能 Top5</h3>
+          <div class="chart_box">
+            <div id="jdxnChartLine" class="chart"></div>
+          </div>
+        </div>
+
+        <div class="mod_box">
+          <h3 class="mod_title"><span class="tit_item"></span>受攻击节点</h3>
+          <div class="chart_box">
+            <ul id="attacknodeList" class="attacknode_list clearfix">
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND01</p>
+                  <p class="number grade6">141,561</p>
+                </div>
+              </li>
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND02</p>
+                  <p class="number grade5">8,260</p>
+                </div>
+              </li>
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND03</p>
+                  <p class="number grade4">4,523</p>
+                </div>
+              </li>
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND04</p>
+                  <p class="number grade3">1822</p>
+                </div>
+              </li>
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND05</p>
+                  <p class="number grade2">550</p>
+                </div>
+              </li>
+              <li class="node_item">
+                <div class="text_wrap">
+                  <p class="name">广信CND06</p>
+                  <p class="number grade1">401</p>
+                </div>
+              </li>                                                                 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chart_modRight end -->
+
+    <!-- chart_modFooter start -->
+    <div class="chart_modFooter clearfix">
+      <a class="icon icon_arrow icon_arrow_down"></a>
+      <div class="scene-content">
+        <div class="mod_box mod_box_table1 fl">
+          <h3 class="mod_title nobg"><span class="tit_item"></span>实时警告</h3>
+          <div class="ranklist-wrap">
+            <div class="ranklist ssjglist">
+                <div class="ranklist-head clearfix">
+                  <ul class="ranklist-tr">
+                    <li class="ranklist-th">级别</li>
+                    <li class="ranklist-th">时间</li>
+                    <li class="ranklist-th">描述</li>
+                  </ul>
+                </div>
+                <div id="ssgj_table" class="ranklist-body clearfix">
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_serious">严重</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>www.xdab.com  不可用</span><a href="#">详情</a></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_general">一般</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>172.3.4.5（广州）超过阈值，CPU172.3.4.5（广州）超过阈值，CPU</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_general">一般</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>172.5.36.12（广州1）异常宕机</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_serious">严重</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>172.5.6.115（广州2）受DDos攻击</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_serious">严重</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>www.xdab.com  不可用</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span class="grade_general">一般</span></li>
+                    <li><span>2016-10-1 15:12:45</span></li>
+                    <li><span>172.5.36.12（深圳5）异常宕机</span></li>
+                  </ul>                
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod_box mod_box_table2 fl">
+          <h3 class="mod_title nobg"><span class="tit_item"></span>实时攻防</h3>
+          <div class="ranklist-wrap">
+            <div class="ranklist ssgflist">
+                <div class="ranklist-head clearfix">
+                  <ul class="ranklist-tr">
+                    <li class="ranklist-th">攻击时间</li>
+                    <li class="ranklist-th">攻击IP</li>
+                    <li class="ranklist-th">攻击目标</li>
+                    <li class="ranklist-th">节点</li>
+                    <li class="ranklist-th">攻击事件</li>
+                  </ul>
+                </div>
+                <div  id="ssgf_table" class="ranklist-body clearfix">
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(广州)</span></li>
+                    <li><span>www.bw.com</span></li>
+                    <li><span>CN1</span></li>
+                    <li><span>DDOS</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(深圳)</span></li>
+                    <li><span>www.363.com</span></li>
+                    <li><span>CN3</span></li>
+                    <li><span>Sql注入</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(佛山)</span></li>
+                    <li><span>北京</span></li>
+                    <li><span>CN4</span></li>
+                    <li><span>DDOS</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(东莞)</span></li>
+                    <li><span>www.baidu.com</span></li>
+                    <li><span>CN2</span></li>
+                    <li><span>DDOS</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(广州)</span></li>
+                    <li><span>上海</span></li>
+                    <li><span>CN1</span></li>
+                    <li><span>DDOS</span></li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>2017-08-03 20:00:00</span></li>
+                    <li><span>172.68.6.5(清远)</span></li>
+                    <li><span>广州</span></li>
+                    <li><span>CN1</span></li>
+                    <li><span>DDOS</span></li>
+                  </ul>                                                              
+                </div>
+            </div>
+          </div>        
+        </div>
+
+        <div class="mod_box mod_box_table3 fr">
+          <h3 class="mod_title nobg"><span class="tit_item"></span>受攻击网站排行</h3>
+          <div class="ranklist-wrap">
+            <div class="ranklist">
+                <div class="ranklist-head clearfix">
+                  <ul class="ranklist-tr">
+                    <li class="ranklist-th">网站</li>
+                    <li class="ranklist-th">次数</li>
+                  </ul>
+                </div>
+                <div  id="sgjwz_table" class="ranklist-body clearfix">
+                  <ul class="ranklist-tr">
+                    <li><span>www.21cn.com</span></li>
+                    <li>1516</li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>www.163.com</span></li>
+                    <li>920</li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>www.dashu.com</span></li>
+                    <li>850</li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>www.nihuakai.com</span></li>
+                    <li>625</li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>www.vgo.com</span></li>
+                    <li>595</li>
+                  </ul>
+                  <ul class="ranklist-tr">
+                    <li><span>www.taobao.com</span></li>
+                    <li>574</li>
+                  </ul>                
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- chart_modFooter start -->
+
+
+  </div>
+  <!-- main end -->
+</div><!-- wrapper end -->
+
+<!-- 引入 ECharts 文件 -->
+<script type="text/javascript" src="../js/lib/echarts3/echarts.min.js"></script>
+<script type="text/javascript" src="../js/monitormap_setting.js"></script>
+<script type="text/javascript" src="../js/monitorchart_setting.js"></script>
+<script type="text/javascript" src="../js/monitortable_setting.js"></script>
+</body>
+</html>
